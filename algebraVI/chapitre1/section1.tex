@@ -1,0 +1,85 @@
+	\section{Applications linéaires et matrices}
+		$\Set{K}$ est un corp quelconque (après ce sera $\Set{R}$ ou $\Set{C}$). Soient $E,F$ deux espaces vectoriels sur $\Set{K}$ \newline
+		$ \varphi \in L(E,F)$(application linéaire de $E$ dans $F$). $E,F$ de dimension finie. On fixe une base $\mathscr{B}$ de $E$ \newline 
+		et une base $\mathscr{C}$ de $F$. $\mathscr{B} = (e_1 ,\ldots ,e_n) \, , \mathscr{C} = (f_1 , \ldots , f_n)$ 
+		\begin{definition}
+			$\Mat_{\mathscr{C} \mathscr{B}} (\varphi) = (a_{ij})_{\substack{1 \le i \le m \\ 1 \le j \le n}}$ , avec $a_{ij}$ tel que $\varphi (e_j) = \sum_{i = 1}^{m} a_{ij} f_i$
+			, et on a $\dim E = n$ et $\dim F = m$.
+			$\text{M}_{\mathscr{C} \mathscr{B}} (\varphi) \in \text{M}_{m,n} (\Set{K})$
+		\end{definition}
+		\begin{example}
+			\[ u \colon \Set{R}_3 [X] \rightarrow \Set{R}_3 [X] , \text{P} \mapsto \text{P(X+1)} \]
+			$u$ est bien linéaire , $\mathscr{C} = ( 1 , X, X(X-1), X(X-1)(X-2)) $ , $\mathscr{B} = (1, X, X^2, X^3)$ et on a:\newline 
+			\[\text{M}_{\mathscr{C} \mathscr{B}} (u) =  
+			\begin{pmatrix}
+			1 & 1 & 0 & 0 \\
+			0 & 1 & 1 & -1 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1
+			\end{pmatrix}\]
+			
+		\end{example}
+		\begin{remark}
+			Une matrice se lit en colone
+		\end{remark}
+		\begin{definition}
+			Dualité \newline
+			\[E^* = \mathscr{L} (E, \Set{K})\]
+			Une forme linéaire est un élément de $E^*$ , i.e une application de $E$ dans $\Set{K}$
+		\end{definition}
+		\begin{remark}
+			\[{ \dim }_{ \Set{K} } E^* = { \dim }_{ \Set{K} } \mathscr{L}(E, \Set{K}) = { \dim }_{ \Set{K}} E \cdot { \dim }_{ \Set{K}} \Set{K} = 
+			{\dim }_{ \Set{K}} E\]
+		\end{remark}
+		\begin{proposition}
+			On fixe une base $\mathscr{B} = (e_1 ,\cdots,e_n)$ de $E$. Alors on a:
+			\[ \mathscr{L} (E,F) = E^* \stackrel{\sim}{\longrightarrow} \text{M}_{1 n} (\Set{K}) , \varphi \mapsto \Mat_{(1) \beta} (\varphi) = (\varphi (e_j))_{ 1 \le j \le n} \]
+		\end{proposition}
+		\begin{proof}
+			Vrai car on a toujours un isomorphisme: $\mathscr{L} (E,F) \stackrel{\sim}{\longrightarrow} \text{M}_{m,n} (\Set{K}) , 
+			\varphi \mapsto \Mat_{\mathscr{C} \mathscr{B}} (\varphi)$ \newline
+			Description de $\Mat_{(1) \mathscr{B}} (\varphi)$ pour $\varphi \in E^*$.
+			\[ \Mat_{(1) \mathscr{B}} (\varphi) = (a_{ij})_{\substack{1 \le i \le 1 \\ 1 \le j \le n}}, f_i = 1 \]
+			\[ \varphi(e_j) = \sum_{i = 1}^1 a_{ij} \Rightarrow \varphi(e_j) = a_{1j} \]
+		\end{proof}
+		\newpage
+		\fbox{Utilisation}
+			Soit $x \in E, X = \Mat_\mathscr{B} (x)$ , vecteur colonne des coordonnés de $x$ dans la base $\mathscr{B}$. 
+			\[ X = (x_{i1})_{1 \le i \le n} , x = \sum_{i = 1}^n x_{i1} \cdot e_i \]
+			On pose $x_i = x_{i1}$, alors on a: 
+			\[ \varphi (x) = \varphi ( \sum_{i = 1}^n x_i \cdot e_i) = \sum_{i = 1}^n x_i \cdot \varphi (e_i) \]
+			Soit $L = ( \varphi (e_i)) = \Mat_{(1)\mathscr{B}} ( \varphi)$ , alors on a:
+			\[ \varphi (x) = L \cdot X = \begin{pmatrix}
+			\varphi(e_1) & \ldots & \varphi (e_n) \end{pmatrix}
+			\begin{pmatrix}
+			x_1 \\ \ldots \\ x_n \end{pmatrix}
+			= \varphi (x) \in \Set{K}	\]
+			Ainsi, on peut associer : \[\left( \underbrace{\varphi}_{\text{forme linéaire}} , \underbrace{x}_{\text{vecteur}}\right) \longmapsto \varphi (x)\]
+			A : \[\left(\underbrace{L}_{\text{matrice ligne}} , \underbrace{X}_{\text{matrice colone}} \right) 
+				\longmapsto \underbrace{L \cdot X}_{\text{multiplication matricielle}}\]
+		\begin{definition}
+		Base duale \newline
+		Soit $\mathscr{B} = (e_i)$ une base de $E$. On appelle \textit{base duale} la famille $(e_i^*)$ de $E^*$ tel que $e_i^* (x) = x_i$
+		\end{definition}
+		\begin{remark}
+			$e_i^*$ est l'application qui envoie un vecteur sur sa i-ème coordonnée. Les $e_i^*$ sont appelés formes coordonnées.
+		\end{remark}
+		\begin{proposition}
+			(AOC) \newline
+			Les $e_i^*$ sont bien dans $E^*$ et la famille $(e_i^*)_{1 \le i \le n}$ est une base de $E^*$
+		\end{proposition}
+		\begin{proof}
+			Montrer que: $e_i^* \in E^* , e_i^* : E \rightarrow \Set{K} , x \mapsto x_i$ \newline
+			\fbox{On vérifie qu'il est linéaire.}
+			\[  e_i^* ( \lambda x + \mu y) = e_i^* (\lambda \sum x_j e_j + \mu \sum y_j e_j) = e_i^*(\sum_{j = 1}^n ( \lambda x_j + \mu y_j) e_j)\]
+		    \[	=	\lambda x_i + \mu y_i \, \text{(On prend la $i$-ème coordonnée)} \]
+		    \[	= \lambda e_i^*(x) + \mu e_i^* (y) \]
+			On a donc bien $e_i^* \in E^*$. On veut montrer que $(e_i^*)_{1 \le i \le n}$ est une base. Comme il y en a $n$ et que $n = \dim E^*$,
+			il suffit de montrer que la famille est libre.
+			\[	\sum_{i = 1}^n \underbrace{\lambda_i}_{\in \Set{K}} \underbrace{e_i^*}_{\in E^*} = \underbrace{0}_{\in E^*} \]
+			On applique cette égalité à $e_j \in E$
+			\[	\left( \sum_{i = 1}^n \lambda_i e_i^*) \right) \left( e_j \right) = 0(e_j) \Leftrightarrow
+				\sum_{i = 1}^n \lambda_i e_i^* (e_j) = 0(e_j) \Leftrightarrow \sum_{i = 1}^n \lambda_i \delta_{i,j} = 0 \, ,(e_i^*(e_j) = \delta_{i,j})
+				\Leftrightarrow 1 \cdot \lambda_j = 0 \]
+			Donc, comme on a pris $\lambda_j$ quelconque(enfin $e_j$ quelconque) , tous les $\lambda_j$ sont nuls, la famille est libre.
+		\end{proof}

@@ -1,0 +1,22 @@
+\section{Hyperplans}
+	\begin{lemma}
+		Soit $F \sev E$ \newline
+		\[ \dim F = \dim E - 1 \Leftrightarrow \exists \varphi \in E^* \backslash \{ 0 \} , F = \ker \varphi \]
+		Dans ce cas, on dit que $F$ est un hyperplan.
+	\end{lemma}	
+	\begin{proof}
+		\fbox{$\Leftarrow$} $\varphi: E \rightarrow \Set{K}$ \newline
+		Si $\varphi \ne 0 , \underbrace{\im \varphi}_{\ne \{0 \}} \subset \Set{K}$. \newline
+		Forcément, $\dim \im \varphi = 1$, d'où $\im \varphi = \Set{K}$ or,$\dim \ker \varphi + \dim \im \varphi = \dim E$ \newline
+		On a donc $\dim \ker \varphi = n - 1$ \newline
+		\fbox{$\Rightarrow$} Soit $F$ un sous-espace vectoriel de dimension $\dim E - 1$ \newline
+		On a une base de $F : (e_1, \ldots, e_{n-1})$, on \textit{complète} en une base de $E$ grâce au théorème de la base incomplète.
+		\[	\underbrace{\left( \overbrace{e_1, \ldots, e_{n-1}}^{\text{base de $F$}} , e_n \right)}_{\text{base de $E$}} \]
+		$\varphi = e_n^*$ est l'élément cherché.
+		\begin{itemize}
+			\item	$\varphi \ne 0$ , en effet $e_n^*$ fait partie d'une base(duale) donc non nul;
+			\item	$F = \ker \varphi$ , en effet: $\underset{\dim n-1}{F} \subset \underset{\dim n-1}{\ker \varphi}$ \newline
+					Soit $x \in F$ , alors $\varphi (x) = e_n^* \left( \sum_{i = 1}^{n-1} x_i e_i \right) = 0$, et donc 
+					$x \in \ker \varphi$
+		\end{itemize} 
+	\end{proof}
