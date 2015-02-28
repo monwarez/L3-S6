@@ -1,2 +1,58 @@
 \section{Orthogonalité de E* vers E}
+	On part d'un sous espace vectoriel $G$ de $E^*$. On va voir $G$ comme un ensemble d'équations. \newline
+	\fbox{Explication} \newline
+	"Dual"\qquad \,
+	$x^2 + y^2 =1$ , équation implicite \newline
+	"Espace"	$\left\{ \begin{array}{r c l}
+	x 	&=&	cos \theta \\
+	y 	&=&	sin \theta
+	\end{array} \right.$	\newline
+	Soit $\varphi \in E^*$ , une équation dans $E$: $\varphi(X) = 0$. \newline
+	Equation implicite: $ax + by +cz = 0$, on a $L = (a,b,c) , L \cdot X = 0$ \newline
+	OPS(On peut supposer) $a \ne 0$, on a alors le système suivant:
+	\[
+		\left\{ \begin{array}{r c l}
+		x	&=&	- \frac{b}{a} y - \frac{c}{a} z \\
+		y	&=&	y	\\
+		z	&=&	z
+		\end{array} \right.
+	\]
+	Alors on a:
+	\[
+		\begin{pmatrix}
+			x	\\
+			y	\\
+			z	\\
+		\end{pmatrix}
+		=
+		y	
+		\begin{pmatrix}
+			- \frac{b}{a} 	\\
+			\phantom{-} 1 	\\
+			\phantom{-} 0
+		\end{pmatrix}
+		+ z
+		\begin{pmatrix}
+			- \frac{c}{a} 	\\
+			\phantom{-} 0	\\
+			\phantom{-} 1	
+		\end{pmatrix}
+	\]
+	Soit $G \subset E^*$
+	\begin{definition}
+		On pose $G^o \subset E$ l'ensemble
+		\[
+			G^o = \{ x \in E, \varphi (x) = 0, \forall \varphi \in G \}
+		\]
+		$G^o$ est appelé l'orthogonal de $G$, on vérifie en exercice que $G^o$ est bien un sous espace vectoriel de $E$
+	\end{definition}
+	\begin{proposition}
+		Soient $G,G_1,G_2 \sev E^*$ , alors on a les propriété suivantes: \newline
+		\begin{enumerate}
+			\item	$\dim G^o + \dim G = \dim E$
+			\item	$G_1 \subset G_2 \Leftrightarrow G_1^o \supset G_2^o$
+			\item	$(G_1 + G_2)^o 	= G_1^o \cap G_2^o$ 
+			\item	$(G_1 \cap G_2)^o	=	G_1^o + G_2^o$
+		\end{enumerate}
+	\end{proposition}	 
 	
