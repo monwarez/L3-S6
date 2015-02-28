@@ -55,4 +55,33 @@
 			\item	$(G_1 \cap G_2)^o	=	G_1^o + G_2^o$
 		\end{enumerate}
 	\end{proposition}	 
+	\begin{proof}
+		\begin{enumerate}
+			\item	On reconnait la formule du rang. $G$ est un sous espace vectoriel, donc possède une base $(\varphi_i)_{ 1 \le i \le d}$ avec 
+					$d	=	\dim G$, on a:
+					\[
+						v \in G^o \Leftrightarrow \forall \varphi \in G , \varphi(v) = 0 \Leftrightarrow \forall i, 1 \le i \le d, \varphi_i(v) = 0
+					\]
+					Soit $X = \Mat_\mathscr{B} (x) , L_i = \Mat_\mathscr{B^*} (\varphi_i) $
+					\[
+						\forall i , \varphi_i(x) = 0 \Leftrightarrow L_i X = 0, \forall i \Leftrightarrow
+						\begin{pmatrix}
+							L_1 \\
+							\vdots \\
+							L_n
+						\end{pmatrix}
+						X	=	0
+					\]
+					On pose $L = 
+					\begin{pmatrix}
+						L_1 \\
+						\vdots \\
+						L_n
+					\end{pmatrix}
+					\in \Mat_{n,n}(\Set{K}) $, alors on a:
+					\[
+						\dim G^o = \dim \{ X, LX = 0 \} = \dim \ker L = \dim E - \dim \im L = \dim E - \dim <L_i>_{1 \le i \le d} = \dim E - \dim G
+					\]
 	
+		\end{enumerate}
+	\end{proof}
