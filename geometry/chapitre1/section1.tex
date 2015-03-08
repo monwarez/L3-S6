@@ -1,0 +1,61 @@
+\section{Définitions et propriétés}
+	\textit{Problème:} Deux droites $D$ et $D'$ sécantes en un point $M$, et un point $C$. On demande de construire
+	la droite passant par $M$ et $C$ sans utiliser $M$. \newline
+	\begin{pspicture}(0,0)(5,5)
+		\psShapeTwoPtC{black}{-}{0}{1}{5}{1} %% la droite D
+		\psShapeTwoPtC{black}{-}{0}{0}{5}{5} %% la droite D'
+
+		\rput(1,1){$\cdot$}
+		\rput(1,1.25){$M$} 	%% Le point M
+		\rput(5,0){$D$} 	%% Droite D
+		\rput(5,4.5){$D'$}	%% Droite D'
+		
+		%% Le point C
+		\rput(4.5,2.5){$\cdot$}
+		\rput(5,2.5){$C$}
+		%% Soit A sur D'
+		\rput(3.5,3.5){$\cdot$}
+		\rput(3.5,4){$A$}
+		%% Soit B sur D
+		\rput(3,1){$\cdot$}
+		\rput(3,0){$B$}
+		
+		%% On trace les droites passant par C et A,B
+		\psShapeTwoPtC{green}{-}{4.5}{2.5}{3.5}{3.5} %% la droite AC
+		\psShapeTwoPtC{red}{-}{4.5}{2.5}{3}{1} %% la droite BC
+		%% Droite de symétrie AB
+		\psShapeTwoPtC{blue}{-}{3}{1}{3.5}{3.5} 
+		%% Droite parallèle à BC passant par A
+		\psShapeTwoPtC{red}{-}{3.5}{3.5}{0.5}{0.5}	
+		%% Droite parallèle à AC passant par B
+		\psShapeTwoPtC{green}{-}{3}{1}{1}{3}	
+		%% Point C'
+		\rput(2,2){$\cdot$}
+		\rput(2,2.5){$C'$}
+		%% Droite CC'
+		\psShapeTwoPtC{yellow}{-}{2}{2}{4.5}{2.5}
+		%% la droite MC passe par l'intersection de CC' et AB
+		\psShapeTwoPtC{orange}{-}{1}{1}{4.5}{2.5}
+ 
+	\end{pspicture} \newline
+	Ok il y a un petit problème(j'avais pas eu le temps de copier) \newline
+	\begin{definition}
+	Soient $X$ un ensemble et $V$ un espace vectoriel sur un corp $\Set{K}$ (abélien). \newline
+	On dit que $X$ est un espace affine de direction $V$ s'il existe une application de $X \times V \rightarrow X, (x,\vec{v}) \mapsto x + \vec{v}$ \newline
+	telle que:
+	\begin{enumerate}[(i)]
+		\item	$x + \vec{0} = x, \forall x \in X$
+		\item	$(x + \vec{u}) + \vec{v} = x + (\vec{u} + \vec{v}) , \forall x \in X, \forall \vec{u},\vec{v} \in V$
+		\item	$\forall x \in X, \forall y \in X , \exists ! \vec{v} \in V , y = x + \vec{v}$
+	\end{enumerate}
+	$\dim_{\Set{K}} X := \dim_{\Set{K}} V$. En plus $\emptyset$ est un espace affine pour lequel $\dim$ n'est pas défini.
+	\end{definition}
+	\begin{remark}
+		(i) et (ii) nous montre que $V$ agit sur $X$, (iii) nous montre que l'action est simplement transitive
+	\end{remark}
+	\begin{definition}
+		(Alternative) \newline	
+		$X$ est un espace affine dirigé par $V$ s'il existe une action simplement transitive de $V$ sur $X$
+	\end{definition}
+	\fbox{Notation: } Si $\vec{v} \in V$, on définit $\tau_{\vec{v}} : X \rightarrow X, x \mapsto x + \vec{v}$
+	

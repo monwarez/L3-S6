@@ -73,7 +73,8 @@
 \def\Aut{{\text{Auti\,}}}
 \def\im{{\text{Im\,}}}
 \def\Id{{\text{Id\,}}}
-\def\psShapeTwoPt#1#2#3#4#5{{ \psline[linecolor=black, linewidth=0.02, arrowsize=0.052917cm 2.0, arrowlength= 1.4, arrowinset=0.0]{#1}(#2,#3)(#4,#5) }} 
+\def\psShapeTwoPtC#1#2#3#4#5#6{{ \psline[linecolor=#1, linewidth=0.02, arrowsize=0.052917cm 2.0, arrowlength= 1.4, arrowinset=0.0]{#2}(#3,#4)(#5,#6) }} 
+\def\psShapeTwoPt#1#2#3#4#5{{ \psShapeTwoPtC{black}{#1}{#2}{#3}{#4}{#5} }}
 \def\psArrow#1#2#3#4{{ \psShapeTwoPt{->}{#1}{#2}{#3}{#4} }}
 \def\diagNoether#1#2#3#4#5#6#7#8{{
 	\begin{pspicture}(0,0)(5.5,3.5)
