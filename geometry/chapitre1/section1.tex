@@ -2,43 +2,50 @@
 	\textit{Problème:} Deux droites $D$ et $D'$ sécantes en un point $M$, et un point $C$. On demande de construire
 	la droite passant par $M$ et $C$ sans utiliser $M$. \newline
 	\begin{pspicture}(0,0)(5,5)
-		\psShapeTwoPtC{black}{-}{0}{1}{5}{1} %% la droite D
-		\psShapeTwoPtC{black}{-}{0}{0}{5}{5} %% la droite D'
+		\psShapeTwoPtC{black}{-}{0}{1}{5}{1} %% la droite D'
+		\psShapeTwoPtC{black}{-}{0}{0}{5}{5} %% la droite D
 
 		\rput(1,1){$\cdot$}
 		\rput(1,1.25){$M$} 	%% Le point M
-		\rput(5,0){$D$} 	%% Droite D
-		\rput(5,4.5){$D'$}	%% Droite D'
+		\rput(5,0.5){$D'$} 	%% Droite D'
+		\rput(5,4.5){$D$}	%% Droite D
 		
 		%% Le point C
 		\rput(4.5,2.5){$\cdot$}
 		\rput(5,2.5){$C$}
-		%% Soit A sur D'
-		\rput(3.5,3.5){$\cdot$}
-		\rput(3.5,4){$A$}
 		%% Soit B sur D
+		\rput(3.5,3.5){$\cdot$}
+		\rput(3.5,4){$B$}
+		%% Soit A sur D'
 		\rput(3,1){$\cdot$}
-		\rput(3,0){$B$}
+		\rput(3,0.5){$A$}
 		
 		%% On trace les droites passant par C et A,B
-		\psShapeTwoPtC{green}{-}{4.5}{2.5}{3.5}{3.5} %% la droite AC
-		\psShapeTwoPtC{red}{-}{4.5}{2.5}{3}{1} %% la droite BC
-		%% Droite de symétrie AB
+		\psShapeTwoPtC{green}{-}{4.5}{2.5}{3.5}{3.5} %% la droite BC
+		\psShapeTwoPtC{red}{-}{4.5}{2.5}{3}{1} %% la droite AC
+		%% Droite  AB
 		\psShapeTwoPtC{blue}{-}{3}{1}{3.5}{3.5} 
 		%% Droite parallèle à BC passant par A
-		\psShapeTwoPtC{red}{-}{3.5}{3.5}{0.5}{0.5}	
-		%% Droite parallèle à AC passant par B
-		\psShapeTwoPtC{green}{-}{3}{1}{1}{3}	
-		%% Point C'
+		\psShapeTwoPtC{green}{-}{3}{1}{1}{3}
+		%% Point B'
 		\rput(2,2){$\cdot$}
-		\rput(2,2.5){$C'$}
-		%% Droite CC'
-		\psShapeTwoPtC{yellow}{-}{2}{2}{4.5}{2.5}
-		%% la droite MC passe par l'intersection de CC' et AB
+		\rput(2,2.5){$B'$}
+		%% Droite parallèle à AB passant par B' coupe D en en A'
+		\psShapeTwoPtC{blue}{-}{2}{2}{1.8}{1}
+		%% Point A'
+		\rput(1.8,1){$\cdot$}
+		\rput(1.8,0.5){$A'$}
+		
+		%% Droite parallèle à AC passant par A'
+		\psShapeTwoPtC{red}{-}{1.8}{1}{3.2}{2.5}
+		%% Point C' intersection de AB' et droite parallèle à AC passant par A'
+		\rput(2.40,1.60){$\cdot$}
+		\rput(2.8,1.5){$C'$}	
+		%% la droite MC passe par C'
 		\psShapeTwoPtC{orange}{-}{1}{1}{4.5}{2.5}
  
 	\end{pspicture} \newline
-	Ok il y a un petit problème(j'avais pas eu le temps de copier) \newline
+	La droite $(CC')$ passe par $M$ donc le problème est résolu.
 	\begin{definition}
 	Soient $X$ un ensemble et $V$ un espace vectoriel sur un corp $\Set{K}$ (abélien). \newline
 	On dit que $X$ est un espace affine de direction $V$ s'il existe une application de $X \times V \rightarrow X, (x,\vec{v}) \mapsto x + \vec{v}$ \newline
