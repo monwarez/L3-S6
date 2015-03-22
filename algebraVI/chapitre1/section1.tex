@@ -1,7 +1,7 @@
 	\section{Applications linéaires et matrices}
 		$\Set{K}$ est un corp quelconque (après ce sera $\Set{R}$ ou $\Set{C}$). Soient $E,F$ deux espaces vectoriels sur $\Set{K}$ \newline
 		$ \varphi \in L(E,F)$(application linéaire de $E$ dans $F$). $E,F$ de dimension finie. On fixe une base $\mathscr{B}$ de $E$ \newline 
-		et une base $\mathscr{C}$ de $F$. $\mathscr{B} = (e_1 ,\ldots ,e_n) \, , \mathscr{C} = (f_1 , \ldots , f_n)$ 
+		et une base $\mathscr{C}$ de $F$. $\mathscr{B} = (e_1 ,\ldots ,e_n) \, , \mathscr{C} = (f_1 , \ldots , f_m)$ 
 		\begin{definition}
 			$\Mat_{\mathscr{C} \mathscr{B}} (\varphi) = (a_{ij})_{\substack{1 \le i \le m \\ 1 \le j \le n}}$ , avec $a_{ij}$ tel que $\varphi (e_j) = \sum_{i = 1}^{m} a_{ij} f_i$
 			, et on a $\dim E = n$ et $\dim F = m$.
@@ -33,7 +33,7 @@
 		\end{remark}
 		\begin{proposition}
 			On fixe une base $\mathscr{B} = (e_1 ,\cdots,e_n)$ de $E$. Alors on a:
-			\[ \mathscr{L} (E,F) = E^* \stackrel{\sim}{\longrightarrow} \text{M}_{1 n} (\Set{K}) , \varphi \mapsto \Mat_{(1) \beta} (\varphi) = (\varphi (e_j))_{ 1 \le j \le n} \]
+			\[ \mathscr{L} (E,\Set{K}) = E^* \stackrel{\sim}{\longrightarrow} \text{M}_{1 n} (\Set{K}) , \varphi \mapsto \Mat_{(1) \beta} (\varphi) = (\varphi (e_j))_{ 1 \le j \le n} \]
 		\end{proposition}
 		\begin{proof}
 			Vrai car on a toujours un isomorphisme: $\mathscr{L} (E,F) \stackrel{\sim}{\longrightarrow} \text{M}_{m,n} (\Set{K}) , 
